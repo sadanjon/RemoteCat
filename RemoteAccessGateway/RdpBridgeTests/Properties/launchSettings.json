@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RdpBridgeTests": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
