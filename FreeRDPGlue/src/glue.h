@@ -8,6 +8,8 @@
 #include <freerdp/client/rdpgfx.h>
 #include <freerdp/client/rdpei.h>
 
+#include "glue_update.h"
+
 typedef struct 
 {
     char *username;
@@ -31,6 +33,8 @@ typedef struct
     FrgOnContextCreatedFn onContextCreated;
     FrgOnVerifyCertificateFn onVerifyCertificate;
     FrgOnAuthenticateFn onAuthenticate;
+
+    FrgUpdateCallbacks updateCallbacks;
 } FrgEntryPoints;
 
 typedef struct

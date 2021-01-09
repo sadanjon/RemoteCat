@@ -104,6 +104,8 @@ const char *getPixelFormatName(UINT32 pixelFormat)
 static
 UINT handleSurfaceCommandPdu(RdpgfxClientContext *context, const RDPGFX_SURFACE_COMMAND *cmd)
 {
+    printf("XXX SURFACE_COMMAND\n");
+#if 0
     printf(
         "function: %s\n"
         "codecId: %" PRIu32 " (%s)\n"
@@ -121,6 +123,7 @@ UINT handleSurfaceCommandPdu(RdpgfxClientContext *context, const RDPGFX_SURFACE_
         cmd->left, cmd->top, cmd->right, cmd->bottom,
         cmd->width, cmd->height,
         cmd->length);
+#endif
     return CHANNEL_RC_OK;
 }
 

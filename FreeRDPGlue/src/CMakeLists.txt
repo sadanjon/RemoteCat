@@ -9,6 +9,9 @@ add_custom_command (TARGET FreeRDPGlueDriver POST_BUILD
 
 add_library(FreeRDPGlue SHARED "glue.h"
                                "glue.c"
+                               "context_update.h"
+                               "context_update.c"
+                               "glue_update.h"
                                "rdpgfx.h"
                                "rdpgfx.c"
                                "cliprdr.h"

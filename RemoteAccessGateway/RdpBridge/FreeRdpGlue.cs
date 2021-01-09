@@ -12,6 +12,7 @@ namespace RdpBridge
         public FrgOnContextCreatedFn OnContextCreated;
         public FrgOnVerifyCertificateFn OnVerifyCertificate;
         public FrgOnAuthenticateFn OnAuthenticate;
+        public UpdateCallbacks UpdateCallbacks;
     }
 
     public class MainOptions
@@ -75,9 +76,42 @@ namespace RdpBridge
                 Argv = argvNative,
                 EntryPoints = new FrgEntryPoints
                 {
-                    OnContextCreated = Marshal.GetFunctionPointerForDelegate(options.EntryPoints.OnContextCreated),
-                    OnVerifyCertificate = Marshal.GetFunctionPointerForDelegate(options.EntryPoints.OnVerifyCertificate),
-                    OnAuthenticate = Marshal.GetFunctionPointerForDelegate(options.EntryPoints.OnAuthenticate),
+                    OnContextCreated    = GetDelegatePtr(options.EntryPoints.OnContextCreated),
+                    OnVerifyCertificate = GetDelegatePtr(options.EntryPoints.OnVerifyCertificate),
+                    OnAuthenticate      = GetDelegatePtr(options.EntryPoints.OnAuthenticate),
+                    UpdateCallbacks = new FrgUpdateCallbacks
+                    {
+                        BeginPaint            = GetDelegatePtr(options.EntryPoints.UpdateCallbacks.BeginPaint),
+                        EndPaint              = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.EndPaint),
+                        DesktopResize         = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.DesktopResize),
+                        Palette               = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.Palette),
+                        SetBounds             = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.SetBounds),
+                        SurfaceBits           = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.SurfaceBits),
+                        SurfaceFrameMarker    = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.SurfaceFrameMarker),
+                        BitmapUpdate          = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.BitmapUpdate),
+                        DstBlt                = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.DstBlt),
+                        PatBlt                = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.PatBlt),
+                        ScrBlt                = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.ScrBlt),
+                        OpaqueRect            = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.OpaqueRect),
+                        MultiOpaqueRect       = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.MultiOpaqueRect),
+                        LineTo                = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.LineTo),
+                        Polyline              = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.Polyline),
+                        MemBlt                = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.MemBlt),
+                        Mem3Blt               = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.Mem3Blt),
+                        GlyphIndex            = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.GlyphIndex),
+                        FastIndex             = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.FastIndex),
+                        FastGlyph             = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.FastGlyph),
+                        CacheColorTable       = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.CacheColorTable),
+                        CacheBrush            = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.CacheBrush),
+                        CacheGlyph            = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.CacheGlyph),
+                        CacheGlyphV2          = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.CacheGlyphV2),
+                        CacheBitmap           = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.CacheBitmap),
+                        CacheBitmapV2         = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.CacheBitmapV2),
+                        CacheBitmapV3         = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.CacheBitmapV3),
+                        CreateOffscreenBitmap = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.CreateOffscreenBitmap),
+                        SwitchSurface         = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.SwitchSurface),
+                        FrameMarker           = GetDelegatePtr(options.EntryPoints.UpdateCallbacks?.FrameMarker),
+                    },
                 },
             };
         }
@@ -95,5 +129,44 @@ namespace RdpBridge
 
             Value = new FrgMainOptions();
         }
+
+        private IntPtr GetDelegatePtr<T>(T @delegate) where T : class
+        {
+            return @delegate != null ? Marshal.GetFunctionPointerForDelegate(@delegate) : IntPtr.Zero;
+        }
+    }
+
+    public class UpdateCallbacks
+    {
+        public FrgUpdateBeginPaintFn BeginPaint;
+        public FrgUpdateEndPaintFn EndPaint;
+        public FrgUpdateDesktopResizeFn DesktopResize;
+        public FrgUpdatePaletteFn Palette;
+        public FrgUpdateSetBoundsFn SetBounds;
+        public FrgUpdateSurfaceBitsFn SurfaceBits;
+        public FrgUpdateSurfaceFrameMarkerFn SurfaceFrameMarker;
+        public FrgUpdateBitmapUpdateFn BitmapUpdate;
+        public FrgUpdateDstBltFn DstBlt;
+        public FrgUpdatePatBltFn PatBlt;
+        public FrgUpdateScrBltFn ScrBlt;
+        public FrgUpdateOpaqueRectFn OpaqueRect;
+        public FrgUpdateMultiOpaqueRectFn MultiOpaqueRect;
+        public FrgUpdateLineToFn LineTo;
+        public FrgUpdatePolylineFn Polyline;
+        public FrgUpdateMemBltFn MemBlt;
+        public FrgUpdateMem3BltFn Mem3Blt;
+        public FrgUpdateGlyphIndexFn GlyphIndex;
+        public FrgUpdateFastIndexFn FastIndex;
+        public FrgUpdateFastGlyphFn FastGlyph;
+        public FrgUpdateCacheColorTableFn CacheColorTable;
+        public FrgUpdateCacheBrushFn CacheBrush;
+        public FrgUpdateCacheGlyphFn CacheGlyph;
+        public FrgUpdateCacheGlyphV2Fn CacheGlyphV2;
+        public FrgUpdateCacheBitmapFn CacheBitmap;
+        public FrgUpdateCacheBitmapV2Fn CacheBitmapV2;
+        public FrgUpdateCacheBitmapV3Fn CacheBitmapV3;
+        public FrgUpdateCreateOffscreenBitmapFn CreateOffscreenBitmap;
+        public FrgUpdateSwitchSurfaceFn SwitchSurface;
+        public FrgUpdateFrameMarkerFn FrameMarker;
     }
 }

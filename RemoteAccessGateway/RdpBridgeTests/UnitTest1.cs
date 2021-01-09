@@ -65,9 +65,9 @@ namespace RdpBridgeTests
                 Password = null,
                 EntryPoints = new EntryPoints
                 {
-                    OnContextCreated = (IntPtr __frgContext) =>
+                    OnContextCreated = (IntPtr frgContext) =>
                     {
-                        _frgContext = __frgContext;
+                        _frgContext = frgContext;
                     },
                     OnAuthenticate = (IntPtr usernameUtf8, IntPtr passwordUtf8, IntPtr domainUtf8) => 
                     {
@@ -106,9 +106,51 @@ namespace RdpBridgeTests
                     },
                     OnVerifyCertificate = (IntPtr x509CertBytes, UIntPtr x509CertBytesLength, IntPtr hostnameUtf8, ushort port, uint flags) =>
                     {
+                        FreeRdpGlue.Disconnect(_frgContext);
                         return 1;
                     }
                 }
+            });
+        }
+
+        [TestMethod]
+        public void Main_calling_update_callbacks()
+        {
+            int counter = 0;
+
+            FreeRdpGlue.Main(new MainOptions
+            {
+                Hostname = RdpTargetHostname,
+                Username = RdpTargetUsername,
+                Password = RdpTargetPassword,
+                EntryPoints = new EntryPoints
+                {
+                    OnContextCreated = (IntPtr frgContext) =>
+                    {
+                        _frgContext = frgContext;
+                    },
+                    OnVerifyCertificate = (IntPtr x509CertBytes, UIntPtr x509CertBytesLength, IntPtr hostnameUtf8, ushort port, uint flags) =>
+                    {
+                        return 1;
+                    },
+                    UpdateCallbacks = new UpdateCallbacks
+                    {
+                        BeginPaint = (IntPtr frgContext) =>
+                        {
+                            Debug.WriteLine($"{counter}: Begin Paint");
+                        },
+                        EndPaint = (IntPtr frgContext) =>
+                        {
+                            Debug.WriteLine($"{counter}: End Paint");
+                            counter += 1;
+
+                            if (counter == 10)
+                            {
+                                FreeRdpGlue.Disconnect(frgContext);
+                            }
+                        },
+                    },
+                },
             });
         }
 

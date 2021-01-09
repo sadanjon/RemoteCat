@@ -4,6 +4,7 @@
 
 #include <freerdp/client/cmdline.h>
 #include <freerdp/client/channels.h>
+#include <freerdp/cache/cache.h>
 
 #include <freerdp/client/cliprdr.h>
 #include <freerdp/client/encomsp.h>
@@ -13,6 +14,7 @@
 
 #include "rdpgfx.h"
 #include "cliprdr.h"
+#include "context_update.h"
 
 #define EVENT_HANDLERS_COUNT 64
 
@@ -213,12 +215,25 @@ BOOL frgPreConnect(freerdp *instance)
 static
 BOOL frgFrameMarker(rdpContext *context, const FRAME_MARKER_ORDER *frame_marker)
 {
+    printf("XXX: FRAME_MARKER\n");
     return TRUE;
 }
 
 static
 BOOL frgEndPaint(rdpContext *context)
 {
+    printf("XXX: END_PAINT\n");
+    return TRUE;
+}
+
+static
+BOOL frgInitFreeRDPCache(freerdp *instance)
+{
+    instance->context->cache = cache_new(instance->settings);
+    if (!instance->context->cache)
+    {
+        return FALSE;
+    }
     return TRUE;
 }
 
@@ -233,11 +248,18 @@ BOOL frgEndPaint(rdpContext *context)
 static
 BOOL frgPostConnect(freerdp *instance)
 {
-    if (!gdi_init(instance, PIXEL_FORMAT_XRGB32))
-        return FALSE;
+    FrgContext *frgContext = (FrgContext*) instance->context;
 
-    instance->update->altsec->FrameMarker = frgFrameMarker;
-    instance->update->EndPaint = frgEndPaint;
+    if (!frgInitFreeRDPCache(instance))
+    {
+        return FALSE;
+    }
+
+    if (!frgInitFreeRDPUpdate(instance))
+    {
+        return FALSE;
+    }
+
     return TRUE;
 }
 

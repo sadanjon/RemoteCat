@@ -1,2 +1,5 @@
 installs/
 FreeRDPGlue/build/
+obj/
+bin/
+.vs/
