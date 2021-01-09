@@ -401,6 +401,9 @@ int frgMain(FrgMainOptions *options)
         frgContext->entryPoints.onContextCreated(frgContext);
     }
 
+    // Set FRG specific settings
+    freeRdpContext->settings->ExternalCertificateManagement = TRUE;
+
     status = freerdp_client_settings_parse_command_line(freeRdpContext->settings, options->argc, options->argv, FALSE);
     status = freerdp_client_settings_command_line_status_print(freeRdpContext->settings, status, options->argc, options->argv);
 
@@ -408,9 +411,6 @@ int frgMain(FrgMainOptions *options)
     {
         goto error;
     }
-
-    // Set FRG specific settings
-    freeRdpContext->settings->ExternalCertificateManagement = TRUE;
 
     if (freerdp_client_start(freeRdpContext) != 0)
     {
