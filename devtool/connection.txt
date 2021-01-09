@@ -1,0 +1,22 @@
+
+Windows 2019:
+============
+uvo18yjszrh5hp79zne.vm.cld.sr
+administrator
+Qb79K43W2B
+
+/u:administrator /p:Qb79K43W2B /v:uvo18yjszrh5hp79zne.vm.cld.sr
+
+Enable gfx channel in FreeRDP:
+===========================
+* add /gfx to enable "Graphics Pipeline" (RDP 8.1)
+* add /gfx:avc420 and friends to enable h264
+    * If FreeRDP compiled without WITH_H264 it will ignore it, we'll probably need to
+      enable it manually.
+
+How to check if AVC 444 mode is on:
+===================================
+
+Event viewer on server side ->
+    Applications and Services Logs -> Microsoft -> Windows -> RemoteDesktopServices-RdpCoreTS
+    Event ID 162: The client supports version 0xA0600 of the RDP graphics protocol, client mode: 0, AVC available: 1, Initial profile: 2048. Server: C4641196697
