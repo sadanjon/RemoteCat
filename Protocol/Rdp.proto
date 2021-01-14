@@ -1,0 +1,31 @@
+syntax = "proto3";
+package Rdp;
+
+option csharp_namespace = "RdpBridge.Protocol";
+
+// import "google/protobuf/timestamp.proto";
+
+message RdpMessageBase {
+    oneof message {
+        RdpConnectMessage connect = 1;
+        RdpDisconnectMessage disconnect = 2;
+        RdpVerifyCertificateMessage verifyCertificate = 3;
+    }
+}
+
+message RdpConnectMessage {
+    string host = 1;
+    string username = 2;
+    string password = 3;
+    string domain = 4;
+}
+
+message RdpDisconnectMessage { }
+
+message RdpVerifyCertificateMessage {
+    bytes x509CertBytes = 1;
+    string hostname = 2;
+    uint32 port = 3;
+    uint32 flags = 4;
+}
+
