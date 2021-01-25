@@ -1,0 +1,14 @@
+syntax = "proto3";
+package Common;
+
+option csharp_namespace = "RdpBridge.Protocol";
+
+message SessionMessage {
+    oneof message {
+        SessionStartMessage sessionStart = 1;
+    }
+}
+
+message SessionStartMessage {
+    string sessionId = 1;
+}

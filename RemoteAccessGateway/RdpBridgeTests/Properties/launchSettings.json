@@ -2,6 +2,9 @@
   "profiles": {
     "RdpBridgeTests": {
       "commandName": "Project",
+      "environmentVariables": {
+        "RDP_BRIDGE_DIR": "C:\\hobby\\RemoteCat\\RemoteAccessGateway\\RdpBridge\\bin\\Debug\\netcoreapp3.1\\RdpBridge.dll"
+      },
       "nativeDebugging": true
     }
   }

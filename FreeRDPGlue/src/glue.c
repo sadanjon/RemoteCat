@@ -107,7 +107,8 @@ int frgVerifyCertificateEx(freerdp *instance, const BYTE *data, size_t length,
 
     if (frgContext->entryPoints.onVerifyCertificate)
     {
-        return frgContext->entryPoints.onVerifyCertificate(data, length, hostname, port, flags);
+        int result = frgContext->entryPoints.onVerifyCertificate(data, length, hostname, port, flags);
+        return result;
     }
     else
     {

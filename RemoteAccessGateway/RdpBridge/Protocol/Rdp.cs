@@ -24,38 +24,53 @@ namespace RdpBridge.Protocol {
     static RdpReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CglSZHAucHJvdG8SA1JkcCK2AQoOUmRwTWVzc2FnZUJhc2USKQoHY29ubmVj",
-            "dBgBIAEoCzIWLlJkcC5SZHBDb25uZWN0TWVzc2FnZUgAEi8KCmRpc2Nvbm5l",
-            "Y3QYAiABKAsyGS5SZHAuUmRwRGlzY29ubmVjdE1lc3NhZ2VIABI9ChF2ZXJp",
-            "ZnlDZXJ0aWZpY2F0ZRgDIAEoCzIgLlJkcC5SZHBWZXJpZnlDZXJ0aWZpY2F0",
-            "ZU1lc3NhZ2VIAEIJCgdtZXNzYWdlIlUKEVJkcENvbm5lY3RNZXNzYWdlEgwK",
-            "BGhvc3QYASABKAkSEAoIdXNlcm5hbWUYAiABKAkSEAoIcGFzc3dvcmQYAyAB",
-            "KAkSDgoGZG9tYWluGAQgASgJIhYKFFJkcERpc2Nvbm5lY3RNZXNzYWdlImMK",
-            "G1JkcFZlcmlmeUNlcnRpZmljYXRlTWVzc2FnZRIVCg14NTA5Q2VydEJ5dGVz",
-            "GAEgASgMEhAKCGhvc3RuYW1lGAIgASgJEgwKBHBvcnQYAyABKA0SDQoFZmxh",
-            "Z3MYBCABKA1CFaoCElJkcEJyaWRnZS5Qcm90b2NvbGIGcHJvdG8z"));
+            "CglSZHAucHJvdG8SA1JkcCL5AgoKUmRwTWVzc2FnZRIvCgpkaXNjb25uZWN0",
+            "GAEgASgLMhkuUmRwLlJkcERpc2Nvbm5lY3RNZXNzYWdlSAASPQoRdmVyaWZ5",
+            "Q2VydGlmaWNhdGUYAiABKAsyIC5SZHAuUmRwVmVyaWZ5Q2VydGlmaWNhdGVN",
+            "ZXNzYWdlSAASSQoXdmVyaWZ5Q2VydGlmaWNhdGVSZXN1bHQYAyABKAsyJi5S",
+            "ZHAuUmRwVmVyaWZ5Q2VydGlmaWNhdGVSZXN1bHRNZXNzYWdlSAASMwoMYXV0",
+            "aGVudGljYXRlGAQgASgLMhsuUmRwLlJkcEF1dGhlbnRpY2F0ZU1lc3NhZ2VI",
+            "ABI/ChJhdXRoZW50aWNhdGVSZXN1bHQYBSABKAsyIS5SZHAuUmRwQXV0aGVu",
+            "dGljYXRlUmVzdWx0TWVzc2FnZUgAEi8KCnNlc3Npb25FbmQYBiABKAsyGS5S",
+            "ZHAuUmRwU2Vzc2lvbkVuZE1lc3NhZ2VIAEIJCgdtZXNzYWdlIhYKFFJkcERp",
+            "c2Nvbm5lY3RNZXNzYWdlIkwKFlJkcEF1dGhlbnRpY2F0ZU1lc3NhZ2USEAoI",
+            "dXNlcm5hbWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkSDgoGZG9tYWluGAMg",
+            "ASgJImsKHFJkcEF1dGhlbnRpY2F0ZVJlc3VsdE1lc3NhZ2USEAoIdXNlcm5h",
+            "bWUYASABKAkSEAoIcGFzc3dvcmQYAiABKAkSDgoGZG9tYWluGAMgASgJEhcK",
+            "D3Bhc3N3b3JkRW50ZXJlZBgEIAEoCCJjChtSZHBWZXJpZnlDZXJ0aWZpY2F0",
+            "ZU1lc3NhZ2USFQoNeDUwOUNlcnRCeXRlcxgBIAEoDBIQCghob3N0bmFtZRgC",
+            "IAEoCRIMCgRwb3J0GAMgASgNEg0KBWZsYWdzGAQgASgNItQBCiFSZHBWZXJp",
+            "ZnlDZXJ0aWZpY2F0ZVJlc3VsdE1lc3NhZ2USUQoGcmVzdWx0GAEgASgOMkEu",
+            "UmRwLlJkcFZlcmlmeUNlcnRpZmljYXRlUmVzdWx0TWVzc2FnZS5SZHBWZXJp",
+            "ZnlDZXJ0aWZpY2F0ZVJlc3VsdCJcChpSZHBWZXJpZnlDZXJ0aWZpY2F0ZVJl",
+            "c3VsdBIOCgpOb3RUcnVzdGVkEAASFgoSUGVybWVuYW50bHlUcnVzdGVkEAES",
+            "FgoSVGVtcG9yYXJpbHlUcnVzdGVkEAIiFgoUUmRwU2Vzc2lvbkVuZE1lc3Nh",
+            "Z2VCFaoCElJkcEJyaWRnZS5Qcm90b2NvbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpMessageBase), global::RdpBridge.Protocol.RdpMessageBase.Parser, new[]{ "Connect", "Disconnect", "VerifyCertificate" }, new[]{ "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpConnectMessage), global::RdpBridge.Protocol.RdpConnectMessage.Parser, new[]{ "Host", "Username", "Password", "Domain" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpMessage), global::RdpBridge.Protocol.RdpMessage.Parser, new[]{ "Disconnect", "VerifyCertificate", "VerifyCertificateResult", "Authenticate", "AuthenticateResult", "SessionEnd" }, new[]{ "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpDisconnectMessage), global::RdpBridge.Protocol.RdpDisconnectMessage.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpVerifyCertificateMessage), global::RdpBridge.Protocol.RdpVerifyCertificateMessage.Parser, new[]{ "X509CertBytes", "Hostname", "Port", "Flags" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpAuthenticateMessage), global::RdpBridge.Protocol.RdpAuthenticateMessage.Parser, new[]{ "Username", "Password", "Domain" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpAuthenticateResultMessage), global::RdpBridge.Protocol.RdpAuthenticateResultMessage.Parser, new[]{ "Username", "Password", "Domain", "PasswordEntered" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpVerifyCertificateMessage), global::RdpBridge.Protocol.RdpVerifyCertificateMessage.Parser, new[]{ "X509CertBytes", "Hostname", "Port", "Flags" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage), global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Parser, new[]{ "Result" }, null, new[]{ typeof(global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::RdpBridge.Protocol.RdpSessionEndMessage), global::RdpBridge.Protocol.RdpSessionEndMessage.Parser, null, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class RdpMessageBase : pb::IMessage<RdpMessageBase>
+  public sealed partial class RdpMessage : pb::IMessage<RdpMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<RdpMessageBase> _parser = new pb::MessageParser<RdpMessageBase>(() => new RdpMessageBase());
+    private static readonly pb::MessageParser<RdpMessage> _parser = new pb::MessageParser<RdpMessage>(() => new RdpMessage());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<RdpMessageBase> Parser { get { return _parser; } }
+    public static pb::MessageParser<RdpMessage> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -68,23 +83,32 @@ namespace RdpBridge.Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RdpMessageBase() {
+    public RdpMessage() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RdpMessageBase(RdpMessageBase other) : this() {
+    public RdpMessage(RdpMessage other) : this() {
       switch (other.MessageCase) {
-        case MessageOneofCase.Connect:
-          Connect = other.Connect.Clone();
-          break;
         case MessageOneofCase.Disconnect:
           Disconnect = other.Disconnect.Clone();
           break;
         case MessageOneofCase.VerifyCertificate:
           VerifyCertificate = other.VerifyCertificate.Clone();
+          break;
+        case MessageOneofCase.VerifyCertificateResult:
+          VerifyCertificateResult = other.VerifyCertificateResult.Clone();
+          break;
+        case MessageOneofCase.Authenticate:
+          Authenticate = other.Authenticate.Clone();
+          break;
+        case MessageOneofCase.AuthenticateResult:
+          AuthenticateResult = other.AuthenticateResult.Clone();
+          break;
+        case MessageOneofCase.SessionEnd:
+          SessionEnd = other.SessionEnd.Clone();
           break;
       }
 
@@ -92,23 +116,12 @@ namespace RdpBridge.Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RdpMessageBase Clone() {
-      return new RdpMessageBase(this);
-    }
-
-    /// <summary>Field number for the "connect" field.</summary>
-    public const int ConnectFieldNumber = 1;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::RdpBridge.Protocol.RdpConnectMessage Connect {
-      get { return messageCase_ == MessageOneofCase.Connect ? (global::RdpBridge.Protocol.RdpConnectMessage) message_ : null; }
-      set {
-        message_ = value;
-        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.Connect;
-      }
+    public RdpMessage Clone() {
+      return new RdpMessage(this);
     }
 
     /// <summary>Field number for the "disconnect" field.</summary>
-    public const int DisconnectFieldNumber = 2;
+    public const int DisconnectFieldNumber = 1;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::RdpBridge.Protocol.RdpDisconnectMessage Disconnect {
       get { return messageCase_ == MessageOneofCase.Disconnect ? (global::RdpBridge.Protocol.RdpDisconnectMessage) message_ : null; }
@@ -119,7 +132,7 @@ namespace RdpBridge.Protocol {
     }
 
     /// <summary>Field number for the "verifyCertificate" field.</summary>
-    public const int VerifyCertificateFieldNumber = 3;
+    public const int VerifyCertificateFieldNumber = 2;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::RdpBridge.Protocol.RdpVerifyCertificateMessage VerifyCertificate {
       get { return messageCase_ == MessageOneofCase.VerifyCertificate ? (global::RdpBridge.Protocol.RdpVerifyCertificateMessage) message_ : null; }
@@ -129,13 +142,60 @@ namespace RdpBridge.Protocol {
       }
     }
 
+    /// <summary>Field number for the "verifyCertificateResult" field.</summary>
+    public const int VerifyCertificateResultFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage VerifyCertificateResult {
+      get { return messageCase_ == MessageOneofCase.VerifyCertificateResult ? (global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.VerifyCertificateResult;
+      }
+    }
+
+    /// <summary>Field number for the "authenticate" field.</summary>
+    public const int AuthenticateFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::RdpBridge.Protocol.RdpAuthenticateMessage Authenticate {
+      get { return messageCase_ == MessageOneofCase.Authenticate ? (global::RdpBridge.Protocol.RdpAuthenticateMessage) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.Authenticate;
+      }
+    }
+
+    /// <summary>Field number for the "authenticateResult" field.</summary>
+    public const int AuthenticateResultFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::RdpBridge.Protocol.RdpAuthenticateResultMessage AuthenticateResult {
+      get { return messageCase_ == MessageOneofCase.AuthenticateResult ? (global::RdpBridge.Protocol.RdpAuthenticateResultMessage) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.AuthenticateResult;
+      }
+    }
+
+    /// <summary>Field number for the "sessionEnd" field.</summary>
+    public const int SessionEndFieldNumber = 6;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::RdpBridge.Protocol.RdpSessionEndMessage SessionEnd {
+      get { return messageCase_ == MessageOneofCase.SessionEnd ? (global::RdpBridge.Protocol.RdpSessionEndMessage) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SessionEnd;
+      }
+    }
+
     private object message_;
     /// <summary>Enum of possible cases for the "message" oneof.</summary>
     public enum MessageOneofCase {
       None = 0,
-      Connect = 1,
-      Disconnect = 2,
-      VerifyCertificate = 3,
+      Disconnect = 1,
+      VerifyCertificate = 2,
+      VerifyCertificateResult = 3,
+      Authenticate = 4,
+      AuthenticateResult = 5,
+      SessionEnd = 6,
     }
     private MessageOneofCase messageCase_ = MessageOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,20 +211,23 @@ namespace RdpBridge.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as RdpMessageBase);
+      return Equals(other as RdpMessage);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(RdpMessageBase other) {
+    public bool Equals(RdpMessage other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Connect, other.Connect)) return false;
       if (!object.Equals(Disconnect, other.Disconnect)) return false;
       if (!object.Equals(VerifyCertificate, other.VerifyCertificate)) return false;
+      if (!object.Equals(VerifyCertificateResult, other.VerifyCertificateResult)) return false;
+      if (!object.Equals(Authenticate, other.Authenticate)) return false;
+      if (!object.Equals(AuthenticateResult, other.AuthenticateResult)) return false;
+      if (!object.Equals(SessionEnd, other.SessionEnd)) return false;
       if (MessageCase != other.MessageCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -172,9 +235,12 @@ namespace RdpBridge.Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (messageCase_ == MessageOneofCase.Connect) hash ^= Connect.GetHashCode();
       if (messageCase_ == MessageOneofCase.Disconnect) hash ^= Disconnect.GetHashCode();
       if (messageCase_ == MessageOneofCase.VerifyCertificate) hash ^= VerifyCertificate.GetHashCode();
+      if (messageCase_ == MessageOneofCase.VerifyCertificateResult) hash ^= VerifyCertificateResult.GetHashCode();
+      if (messageCase_ == MessageOneofCase.Authenticate) hash ^= Authenticate.GetHashCode();
+      if (messageCase_ == MessageOneofCase.AuthenticateResult) hash ^= AuthenticateResult.GetHashCode();
+      if (messageCase_ == MessageOneofCase.SessionEnd) hash ^= SessionEnd.GetHashCode();
       hash ^= (int) messageCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -192,17 +258,29 @@ namespace RdpBridge.Protocol {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (messageCase_ == MessageOneofCase.Connect) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Connect);
-      }
       if (messageCase_ == MessageOneofCase.Disconnect) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteMessage(Disconnect);
       }
       if (messageCase_ == MessageOneofCase.VerifyCertificate) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteMessage(VerifyCertificate);
+      }
+      if (messageCase_ == MessageOneofCase.VerifyCertificateResult) {
+        output.WriteRawTag(26);
+        output.WriteMessage(VerifyCertificateResult);
+      }
+      if (messageCase_ == MessageOneofCase.Authenticate) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Authenticate);
+      }
+      if (messageCase_ == MessageOneofCase.AuthenticateResult) {
+        output.WriteRawTag(42);
+        output.WriteMessage(AuthenticateResult);
+      }
+      if (messageCase_ == MessageOneofCase.SessionEnd) {
+        output.WriteRawTag(50);
+        output.WriteMessage(SessionEnd);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -213,17 +291,29 @@ namespace RdpBridge.Protocol {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (messageCase_ == MessageOneofCase.Connect) {
-        output.WriteRawTag(10);
-        output.WriteMessage(Connect);
-      }
       if (messageCase_ == MessageOneofCase.Disconnect) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteMessage(Disconnect);
       }
       if (messageCase_ == MessageOneofCase.VerifyCertificate) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteMessage(VerifyCertificate);
+      }
+      if (messageCase_ == MessageOneofCase.VerifyCertificateResult) {
+        output.WriteRawTag(26);
+        output.WriteMessage(VerifyCertificateResult);
+      }
+      if (messageCase_ == MessageOneofCase.Authenticate) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Authenticate);
+      }
+      if (messageCase_ == MessageOneofCase.AuthenticateResult) {
+        output.WriteRawTag(42);
+        output.WriteMessage(AuthenticateResult);
+      }
+      if (messageCase_ == MessageOneofCase.SessionEnd) {
+        output.WriteRawTag(50);
+        output.WriteMessage(SessionEnd);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -234,14 +324,23 @@ namespace RdpBridge.Protocol {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (messageCase_ == MessageOneofCase.Connect) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Connect);
-      }
       if (messageCase_ == MessageOneofCase.Disconnect) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Disconnect);
       }
       if (messageCase_ == MessageOneofCase.VerifyCertificate) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(VerifyCertificate);
+      }
+      if (messageCase_ == MessageOneofCase.VerifyCertificateResult) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(VerifyCertificateResult);
+      }
+      if (messageCase_ == MessageOneofCase.Authenticate) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Authenticate);
+      }
+      if (messageCase_ == MessageOneofCase.AuthenticateResult) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AuthenticateResult);
+      }
+      if (messageCase_ == MessageOneofCase.SessionEnd) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SessionEnd);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -250,17 +349,11 @@ namespace RdpBridge.Protocol {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(RdpMessageBase other) {
+    public void MergeFrom(RdpMessage other) {
       if (other == null) {
         return;
       }
       switch (other.MessageCase) {
-        case MessageOneofCase.Connect:
-          if (Connect == null) {
-            Connect = new global::RdpBridge.Protocol.RdpConnectMessage();
-          }
-          Connect.MergeFrom(other.Connect);
-          break;
         case MessageOneofCase.Disconnect:
           if (Disconnect == null) {
             Disconnect = new global::RdpBridge.Protocol.RdpDisconnectMessage();
@@ -273,6 +366,30 @@ namespace RdpBridge.Protocol {
           }
           VerifyCertificate.MergeFrom(other.VerifyCertificate);
           break;
+        case MessageOneofCase.VerifyCertificateResult:
+          if (VerifyCertificateResult == null) {
+            VerifyCertificateResult = new global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage();
+          }
+          VerifyCertificateResult.MergeFrom(other.VerifyCertificateResult);
+          break;
+        case MessageOneofCase.Authenticate:
+          if (Authenticate == null) {
+            Authenticate = new global::RdpBridge.Protocol.RdpAuthenticateMessage();
+          }
+          Authenticate.MergeFrom(other.Authenticate);
+          break;
+        case MessageOneofCase.AuthenticateResult:
+          if (AuthenticateResult == null) {
+            AuthenticateResult = new global::RdpBridge.Protocol.RdpAuthenticateResultMessage();
+          }
+          AuthenticateResult.MergeFrom(other.AuthenticateResult);
+          break;
+        case MessageOneofCase.SessionEnd:
+          if (SessionEnd == null) {
+            SessionEnd = new global::RdpBridge.Protocol.RdpSessionEndMessage();
+          }
+          SessionEnd.MergeFrom(other.SessionEnd);
+          break;
       }
 
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -290,15 +407,6 @@ namespace RdpBridge.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            global::RdpBridge.Protocol.RdpConnectMessage subBuilder = new global::RdpBridge.Protocol.RdpConnectMessage();
-            if (messageCase_ == MessageOneofCase.Connect) {
-              subBuilder.MergeFrom(Connect);
-            }
-            input.ReadMessage(subBuilder);
-            Connect = subBuilder;
-            break;
-          }
-          case 18: {
             global::RdpBridge.Protocol.RdpDisconnectMessage subBuilder = new global::RdpBridge.Protocol.RdpDisconnectMessage();
             if (messageCase_ == MessageOneofCase.Disconnect) {
               subBuilder.MergeFrom(Disconnect);
@@ -307,13 +415,49 @@ namespace RdpBridge.Protocol {
             Disconnect = subBuilder;
             break;
           }
-          case 26: {
+          case 18: {
             global::RdpBridge.Protocol.RdpVerifyCertificateMessage subBuilder = new global::RdpBridge.Protocol.RdpVerifyCertificateMessage();
             if (messageCase_ == MessageOneofCase.VerifyCertificate) {
               subBuilder.MergeFrom(VerifyCertificate);
             }
             input.ReadMessage(subBuilder);
             VerifyCertificate = subBuilder;
+            break;
+          }
+          case 26: {
+            global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage subBuilder = new global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage();
+            if (messageCase_ == MessageOneofCase.VerifyCertificateResult) {
+              subBuilder.MergeFrom(VerifyCertificateResult);
+            }
+            input.ReadMessage(subBuilder);
+            VerifyCertificateResult = subBuilder;
+            break;
+          }
+          case 34: {
+            global::RdpBridge.Protocol.RdpAuthenticateMessage subBuilder = new global::RdpBridge.Protocol.RdpAuthenticateMessage();
+            if (messageCase_ == MessageOneofCase.Authenticate) {
+              subBuilder.MergeFrom(Authenticate);
+            }
+            input.ReadMessage(subBuilder);
+            Authenticate = subBuilder;
+            break;
+          }
+          case 42: {
+            global::RdpBridge.Protocol.RdpAuthenticateResultMessage subBuilder = new global::RdpBridge.Protocol.RdpAuthenticateResultMessage();
+            if (messageCase_ == MessageOneofCase.AuthenticateResult) {
+              subBuilder.MergeFrom(AuthenticateResult);
+            }
+            input.ReadMessage(subBuilder);
+            AuthenticateResult = subBuilder;
+            break;
+          }
+          case 50: {
+            global::RdpBridge.Protocol.RdpSessionEndMessage subBuilder = new global::RdpBridge.Protocol.RdpSessionEndMessage();
+            if (messageCase_ == MessageOneofCase.SessionEnd) {
+              subBuilder.MergeFrom(SessionEnd);
+            }
+            input.ReadMessage(subBuilder);
+            SessionEnd = subBuilder;
             break;
           }
         }
@@ -331,15 +475,6 @@ namespace RdpBridge.Protocol {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            global::RdpBridge.Protocol.RdpConnectMessage subBuilder = new global::RdpBridge.Protocol.RdpConnectMessage();
-            if (messageCase_ == MessageOneofCase.Connect) {
-              subBuilder.MergeFrom(Connect);
-            }
-            input.ReadMessage(subBuilder);
-            Connect = subBuilder;
-            break;
-          }
-          case 18: {
             global::RdpBridge.Protocol.RdpDisconnectMessage subBuilder = new global::RdpBridge.Protocol.RdpDisconnectMessage();
             if (messageCase_ == MessageOneofCase.Disconnect) {
               subBuilder.MergeFrom(Disconnect);
@@ -348,7 +483,7 @@ namespace RdpBridge.Protocol {
             Disconnect = subBuilder;
             break;
           }
-          case 26: {
+          case 18: {
             global::RdpBridge.Protocol.RdpVerifyCertificateMessage subBuilder = new global::RdpBridge.Protocol.RdpVerifyCertificateMessage();
             if (messageCase_ == MessageOneofCase.VerifyCertificate) {
               subBuilder.MergeFrom(VerifyCertificate);
@@ -357,284 +492,40 @@ namespace RdpBridge.Protocol {
             VerifyCertificate = subBuilder;
             break;
           }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  public sealed partial class RdpConnectMessage : pb::IMessage<RdpConnectMessage>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<RdpConnectMessage> _parser = new pb::MessageParser<RdpConnectMessage>(() => new RdpConnectMessage());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<RdpConnectMessage> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::RdpBridge.Protocol.RdpReflection.Descriptor.MessageTypes[1]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RdpConnectMessage() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RdpConnectMessage(RdpConnectMessage other) : this() {
-      host_ = other.host_;
-      username_ = other.username_;
-      password_ = other.password_;
-      domain_ = other.domain_;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public RdpConnectMessage Clone() {
-      return new RdpConnectMessage(this);
-    }
-
-    /// <summary>Field number for the "host" field.</summary>
-    public const int HostFieldNumber = 1;
-    private string host_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Host {
-      get { return host_; }
-      set {
-        host_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "username" field.</summary>
-    public const int UsernameFieldNumber = 2;
-    private string username_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Username {
-      get { return username_; }
-      set {
-        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "password" field.</summary>
-    public const int PasswordFieldNumber = 3;
-    private string password_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Password {
-      get { return password_; }
-      set {
-        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "domain" field.</summary>
-    public const int DomainFieldNumber = 4;
-    private string domain_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Domain {
-      get { return domain_; }
-      set {
-        domain_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override bool Equals(object other) {
-      return Equals(other as RdpConnectMessage);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(RdpConnectMessage other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Host != other.Host) return false;
-      if (Username != other.Username) return false;
-      if (Password != other.Password) return false;
-      if (Domain != other.Domain) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Host.Length != 0) hash ^= Host.GetHashCode();
-      if (Username.Length != 0) hash ^= Username.GetHashCode();
-      if (Password.Length != 0) hash ^= Password.GetHashCode();
-      if (Domain.Length != 0) hash ^= Domain.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (Host.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Host);
-      }
-      if (Username.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Username);
-      }
-      if (Password.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Password);
-      }
-      if (Domain.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Domain);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Host.Length != 0) {
-        output.WriteRawTag(10);
-        output.WriteString(Host);
-      }
-      if (Username.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Username);
-      }
-      if (Password.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(Password);
-      }
-      if (Domain.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Domain);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public int CalculateSize() {
-      int size = 0;
-      if (Host.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Host);
-      }
-      if (Username.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
-      }
-      if (Password.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
-      }
-      if (Domain.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Domain);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(RdpConnectMessage other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Host.Length != 0) {
-        Host = other.Host;
-      }
-      if (other.Username.Length != 0) {
-        Username = other.Username;
-      }
-      if (other.Password.Length != 0) {
-        Password = other.Password;
-      }
-      if (other.Domain.Length != 0) {
-        Domain = other.Domain;
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            Host = input.ReadString();
-            break;
-          }
-          case 18: {
-            Username = input.ReadString();
-            break;
-          }
           case 26: {
-            Password = input.ReadString();
+            global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage subBuilder = new global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage();
+            if (messageCase_ == MessageOneofCase.VerifyCertificateResult) {
+              subBuilder.MergeFrom(VerifyCertificateResult);
+            }
+            input.ReadMessage(subBuilder);
+            VerifyCertificateResult = subBuilder;
             break;
           }
           case 34: {
-            Domain = input.ReadString();
+            global::RdpBridge.Protocol.RdpAuthenticateMessage subBuilder = new global::RdpBridge.Protocol.RdpAuthenticateMessage();
+            if (messageCase_ == MessageOneofCase.Authenticate) {
+              subBuilder.MergeFrom(Authenticate);
+            }
+            input.ReadMessage(subBuilder);
+            Authenticate = subBuilder;
             break;
           }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            Host = input.ReadString();
+          case 42: {
+            global::RdpBridge.Protocol.RdpAuthenticateResultMessage subBuilder = new global::RdpBridge.Protocol.RdpAuthenticateResultMessage();
+            if (messageCase_ == MessageOneofCase.AuthenticateResult) {
+              subBuilder.MergeFrom(AuthenticateResult);
+            }
+            input.ReadMessage(subBuilder);
+            AuthenticateResult = subBuilder;
             break;
           }
-          case 18: {
-            Username = input.ReadString();
-            break;
-          }
-          case 26: {
-            Password = input.ReadString();
-            break;
-          }
-          case 34: {
-            Domain = input.ReadString();
+          case 50: {
+            global::RdpBridge.Protocol.RdpSessionEndMessage subBuilder = new global::RdpBridge.Protocol.RdpSessionEndMessage();
+            if (messageCase_ == MessageOneofCase.SessionEnd) {
+              subBuilder.MergeFrom(SessionEnd);
+            }
+            input.ReadMessage(subBuilder);
+            SessionEnd = subBuilder;
             break;
           }
         }
@@ -656,7 +547,7 @@ namespace RdpBridge.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RdpBridge.Protocol.RdpReflection.Descriptor.MessageTypes[2]; }
+      get { return global::RdpBridge.Protocol.RdpReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -780,6 +671,530 @@ namespace RdpBridge.Protocol {
 
   }
 
+  public sealed partial class RdpAuthenticateMessage : pb::IMessage<RdpAuthenticateMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RdpAuthenticateMessage> _parser = new pb::MessageParser<RdpAuthenticateMessage>(() => new RdpAuthenticateMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RdpAuthenticateMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::RdpBridge.Protocol.RdpReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpAuthenticateMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpAuthenticateMessage(RdpAuthenticateMessage other) : this() {
+      username_ = other.username_;
+      password_ = other.password_;
+      domain_ = other.domain_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpAuthenticateMessage Clone() {
+      return new RdpAuthenticateMessage(this);
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 1;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 2;
+    private string password_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Password {
+      get { return password_; }
+      set {
+        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "domain" field.</summary>
+    public const int DomainFieldNumber = 3;
+    private string domain_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Domain {
+      get { return domain_; }
+      set {
+        domain_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RdpAuthenticateMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RdpAuthenticateMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Username != other.Username) return false;
+      if (Password != other.Password) return false;
+      if (Domain != other.Domain) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (Password.Length != 0) hash ^= Password.GetHashCode();
+      if (Domain.Length != 0) hash ^= Domain.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
+      if (Domain.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Domain);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
+      if (Domain.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Domain);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (Password.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
+      }
+      if (Domain.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Domain);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RdpAuthenticateMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.Password.Length != 0) {
+        Password = other.Password;
+      }
+      if (other.Domain.Length != 0) {
+        Domain = other.Domain;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+          case 18: {
+            Password = input.ReadString();
+            break;
+          }
+          case 26: {
+            Domain = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+          case 18: {
+            Password = input.ReadString();
+            break;
+          }
+          case 26: {
+            Domain = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class RdpAuthenticateResultMessage : pb::IMessage<RdpAuthenticateResultMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RdpAuthenticateResultMessage> _parser = new pb::MessageParser<RdpAuthenticateResultMessage>(() => new RdpAuthenticateResultMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RdpAuthenticateResultMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::RdpBridge.Protocol.RdpReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpAuthenticateResultMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpAuthenticateResultMessage(RdpAuthenticateResultMessage other) : this() {
+      username_ = other.username_;
+      password_ = other.password_;
+      domain_ = other.domain_;
+      passwordEntered_ = other.passwordEntered_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpAuthenticateResultMessage Clone() {
+      return new RdpAuthenticateResultMessage(this);
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 1;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "password" field.</summary>
+    public const int PasswordFieldNumber = 2;
+    private string password_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Password {
+      get { return password_; }
+      set {
+        password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "domain" field.</summary>
+    public const int DomainFieldNumber = 3;
+    private string domain_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Domain {
+      get { return domain_; }
+      set {
+        domain_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "passwordEntered" field.</summary>
+    public const int PasswordEnteredFieldNumber = 4;
+    private bool passwordEntered_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool PasswordEntered {
+      get { return passwordEntered_; }
+      set {
+        passwordEntered_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RdpAuthenticateResultMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RdpAuthenticateResultMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Username != other.Username) return false;
+      if (Password != other.Password) return false;
+      if (Domain != other.Domain) return false;
+      if (PasswordEntered != other.PasswordEntered) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (Password.Length != 0) hash ^= Password.GetHashCode();
+      if (Domain.Length != 0) hash ^= Domain.GetHashCode();
+      if (PasswordEntered != false) hash ^= PasswordEntered.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
+      if (Domain.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Domain);
+      }
+      if (PasswordEntered != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(PasswordEntered);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (Password.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Password);
+      }
+      if (Domain.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Domain);
+      }
+      if (PasswordEntered != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(PasswordEntered);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (Password.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
+      }
+      if (Domain.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Domain);
+      }
+      if (PasswordEntered != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RdpAuthenticateResultMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.Password.Length != 0) {
+        Password = other.Password;
+      }
+      if (other.Domain.Length != 0) {
+        Domain = other.Domain;
+      }
+      if (other.PasswordEntered != false) {
+        PasswordEntered = other.PasswordEntered;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+          case 18: {
+            Password = input.ReadString();
+            break;
+          }
+          case 26: {
+            Domain = input.ReadString();
+            break;
+          }
+          case 32: {
+            PasswordEntered = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+          case 18: {
+            Password = input.ReadString();
+            break;
+          }
+          case 26: {
+            Domain = input.ReadString();
+            break;
+          }
+          case 32: {
+            PasswordEntered = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class RdpVerifyCertificateMessage : pb::IMessage<RdpVerifyCertificateMessage>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -792,7 +1207,7 @@ namespace RdpBridge.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::RdpBridge.Protocol.RdpReflection.Descriptor.MessageTypes[3]; }
+      get { return global::RdpBridge.Protocol.RdpReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1053,6 +1468,327 @@ namespace RdpBridge.Protocol {
             Flags = input.ReadUInt32();
             break;
           }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class RdpVerifyCertificateResultMessage : pb::IMessage<RdpVerifyCertificateResultMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RdpVerifyCertificateResultMessage> _parser = new pb::MessageParser<RdpVerifyCertificateResultMessage>(() => new RdpVerifyCertificateResultMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RdpVerifyCertificateResultMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::RdpBridge.Protocol.RdpReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpVerifyCertificateResultMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpVerifyCertificateResultMessage(RdpVerifyCertificateResultMessage other) : this() {
+      result_ = other.result_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpVerifyCertificateResultMessage Clone() {
+      return new RdpVerifyCertificateResultMessage(this);
+    }
+
+    /// <summary>Field number for the "result" field.</summary>
+    public const int ResultFieldNumber = 1;
+    private global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult result_ = global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult.NotTrusted;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult Result {
+      get { return result_; }
+      set {
+        result_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RdpVerifyCertificateResultMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RdpVerifyCertificateResultMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Result != other.Result) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Result != global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult.NotTrusted) hash ^= Result.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Result != global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult.NotTrusted) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Result);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Result != global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult.NotTrusted) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) Result);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Result != global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult.NotTrusted) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Result);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RdpVerifyCertificateResultMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Result != global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult.NotTrusted) {
+        Result = other.Result;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Result = (global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Result = (global::RdpBridge.Protocol.RdpVerifyCertificateResultMessage.Types.RdpVerifyCertificateResult) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the RdpVerifyCertificateResultMessage message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      public enum RdpVerifyCertificateResult {
+        [pbr::OriginalName("NotTrusted")] NotTrusted = 0,
+        [pbr::OriginalName("PermenantlyTrusted")] PermenantlyTrusted = 1,
+        [pbr::OriginalName("TemporarilyTrusted")] TemporarilyTrusted = 2,
+      }
+
+    }
+    #endregion
+
+  }
+
+  public sealed partial class RdpSessionEndMessage : pb::IMessage<RdpSessionEndMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RdpSessionEndMessage> _parser = new pb::MessageParser<RdpSessionEndMessage>(() => new RdpSessionEndMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<RdpSessionEndMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::RdpBridge.Protocol.RdpReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpSessionEndMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpSessionEndMessage(RdpSessionEndMessage other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public RdpSessionEndMessage Clone() {
+      return new RdpSessionEndMessage(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as RdpSessionEndMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(RdpSessionEndMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(RdpSessionEndMessage other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
         }
       }
     }

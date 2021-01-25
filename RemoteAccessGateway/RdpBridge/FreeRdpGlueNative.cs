@@ -25,8 +25,15 @@ namespace RdpBridge
         Mismatch = 0x80, 
     }
 
+    public enum FrgVerifyCertResult : uint
+    {
+        NotTrusted = 0,
+        PermenantlyTrusted = 1,
+        TemporarilyTrusted = 2,
+    }
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate uint FrgOnVerifyCertificateFn(IntPtr x509CertBytes, UIntPtr x509CertBytesLength, IntPtr hostnameUtf8, ushort port, uint flags);
+    public delegate FrgVerifyCertResult FrgOnVerifyCertificateFn(IntPtr x509CertBytes, UIntPtr x509CertBytesLength, IntPtr hostnameUtf8, ushort port, uint flags);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void FrgOnContextCreatedFn(IntPtr frgContext);

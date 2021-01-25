@@ -9,7 +9,7 @@ using System.Linq;
 namespace RdpBridgeTests
 {
     [TestClass]
-    public class RdpBridgeTests
+    public class FreeRdpGlueTests
     {
         private const string RdpTargetHostname = "uvo18yjszrh5hp79zne.vm.cld.sr";
         private const string RdpTargetUsername = "Administrator";
@@ -32,8 +32,6 @@ namespace RdpBridgeTests
         [TestMethod]
         public void Main_print_certificate_and_disconnect()
         {
-            
-
             FreeRdpGlue.Main(new MainOptions
             {
                 Hostname = RdpTargetHostname,
@@ -49,7 +47,7 @@ namespace RdpBridgeTests
                     {
                         PrintCertificateData(x509CertBytes, x509CertBytesLength, hostnameUtf8, port, flags);
                         FreeRdpGlue.Disconnect(_frgContext);
-                        return 1;
+                        return FrgVerifyCertResult.TemporarilyTrusted;
                     }
                 }
             });
@@ -107,7 +105,7 @@ namespace RdpBridgeTests
                     OnVerifyCertificate = (IntPtr x509CertBytes, UIntPtr x509CertBytesLength, IntPtr hostnameUtf8, ushort port, uint flags) =>
                     {
                         FreeRdpGlue.Disconnect(_frgContext);
-                        return 1;
+                        return FrgVerifyCertResult.TemporarilyTrusted;
                     }
                 }
             });
@@ -131,7 +129,7 @@ namespace RdpBridgeTests
                     },
                     OnVerifyCertificate = (IntPtr x509CertBytes, UIntPtr x509CertBytesLength, IntPtr hostnameUtf8, ushort port, uint flags) =>
                     {
-                        return 1;
+                        return FrgVerifyCertResult.TemporarilyTrusted;
                     },
                     UpdateCallbacks = new UpdateCallbacks
                     {

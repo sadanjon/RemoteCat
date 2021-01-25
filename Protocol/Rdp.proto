@@ -5,22 +5,31 @@ option csharp_namespace = "RdpBridge.Protocol";
 
 // import "google/protobuf/timestamp.proto";
 
-message RdpMessageBase {
+message RdpMessage {
     oneof message {
-        RdpConnectMessage connect = 1;
-        RdpDisconnectMessage disconnect = 2;
-        RdpVerifyCertificateMessage verifyCertificate = 3;
+        RdpDisconnectMessage disconnect = 1;
+        RdpVerifyCertificateMessage verifyCertificate = 2;
+        RdpVerifyCertificateResultMessage verifyCertificateResult = 3;
+        RdpAuthenticateMessage authenticate = 4;
+        RdpAuthenticateResultMessage authenticateResult = 5;
+        RdpSessionEndMessage sessionEnd = 6;
     }
 }
 
-message RdpConnectMessage {
-    string host = 1;
-    string username = 2;
-    string password = 3;
-    string domain = 4;
+message RdpDisconnectMessage { }
+
+message RdpAuthenticateMessage {
+    string username = 1;
+    string password = 2;
+    string domain = 3;
 }
 
-message RdpDisconnectMessage { }
+message RdpAuthenticateResultMessage {
+    string username = 1;
+    string password = 2;
+    string domain = 3;
+    bool passwordEntered = 4;
+}
 
 message RdpVerifyCertificateMessage {
     bytes x509CertBytes = 1;
@@ -29,3 +38,14 @@ message RdpVerifyCertificateMessage {
     uint32 flags = 4;
 }
 
+message RdpVerifyCertificateResultMessage {
+    RdpVerifyCertificateResult result = 1;
+
+    enum RdpVerifyCertificateResult {
+        NotTrusted = 0;
+        PermenantlyTrusted = 1;
+        TemporarilyTrusted = 2;
+    }
+}
+
+message RdpSessionEndMessage {}
